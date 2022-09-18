@@ -1,0 +1,227 @@
+.header {
+    padding: 50px; 
+    text-align: Right-aligned;
+    color: black;
+    
+}
+  
+  /* Increase the font size of the <h1> element */
+  .header h1 {
+    font-size: 40px;
+  }
+
+.navbar {
+    overflow: hidden; /* Hide overflow */
+    background-color: pink; /* Dark background color */
+  }
+  
+  /* Style the navigation bar links */
+  .navbar a {
+    float: left; /* Make sure that the links stay side-by-side */
+    display: block; /* Change the display to block, for responsive reasons (see below) */
+    color: white; /* White text color */
+    text-align: center; /* Center the text */
+    padding: 14px 20px; /* Add some padding */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  /* Right-aligned link */
+  .navbar a.right {
+    float: right; /* Float a link to the right */
+  }
+  
+  /* Change color on hover/mouse-over */
+  .navbar a:hover {
+    background-color: #ddd; /* Grey background color */
+    color: black; /* Black text color */
+  }
+
+/* Ensure proper sizing */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Column container */
+  
+  
+  /* Create two unequal columns that sits next to each other */
+  /* Sidebar/left column */
+  .side {
+    flex: 50%; /* Set the width of the sidebar */
+    background-color: #f1f1f1; /* Grey background color */
+    padding: 20px; /* Some padding */
+  }
+  
+  /* Main column */
+  .main { 
+    flex: 50%; /* Set the width of the main content */
+    background-color: white; /* White background color */
+    padding: 20px; /* Some padding */
+  }
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .row { 
+      flex-direction: column;
+    }
+  }
+  
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 400px) {
+    .navbar a {
+      float: none;
+      width: 100%;
+    }
+  }
+.footer {
+    padding: 20px; /* Some padding */
+    text-align: center; /* Center text*/
+    background: pink; /* Grey background */
+}
+
+.typewriterh1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid transparent; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end none  ;
+}
+  
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color:transparent; }
+}
+ 
+.backback {
+	background: conic-gradient(
+		from 45deg,
+		pink 0,
+		pink 90deg,
+		white 90deg,
+		white 180deg,
+		black 180deg,
+		black 270deg,
+		#0f9bfe 270deg,
+		#0f9bfe 360deg
+	);
+	background-size: 1em 1em;
+	height: 100%;
+}
+.pinky{
+    background-color:pink;
+
+}
+ .greeny{
+  background-color: green;
+ }
+.font{
+    font-family: "oblique";
+    
+}
+
+.bluewy{
+  background-color: blue;
+}
+.violet{
+  background-color: violet;
+}
+
+.zoom {
+  padding: 50px;
+  
+  transition: transform .2s; /* Animation */
+  
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+a:link {
+  
+  background-color: transparent; 
+  text-decoration: underline;
+}
+
+.container{
+  width: 50%;
+  margin: 0 auto;
+}
+
+@keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-webkit-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-moz-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-o-keyframes load{
+  from {
+    width: 0%
+  }
+}
+
+.bar{
+  background-color: #EEE;
+  padding: 2px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #FFF;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+.bar::before{
+  content:  attr(data-skill);
+  background-color: pink;
+  display: inline-block;
+  padding: 5px 0 5px 10px;
+  border-radius: inherit;
+  animation: load 2s 0s;
+  -webkit-animation: load 2s 0s;
+  -moz-animation: load 2s 0s;
+  -o-animation: load 2s 0s;
+  animation-duration: 3s;
+  animation-iteration-count: 5;
+}
+
+.bar.front::before{
+  background-color: #0f9bfe;
+}
+.bar.back::before{
+  background-color: pink;
+}
+
+.bar.learning::before{
+  width: calc(30% - 10px);
+}
+.bar.basic::before{
+  width: calc(50% - 10px);
+}
+.bar.intermediate::before{
+  width: calc(60% - 10px);
+}
+.bar.advanced::before{
+  width: calc(80% - 10px);
+}
+.bar.expert::before{
+  width: calc(100% - 10px);
+}
